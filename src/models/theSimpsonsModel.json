@@ -1,0 +1,14 @@
+[
+    {
+        "id": 0,
+        "nome": "Bart",
+        "idade": 10,
+        "catchphrase": "eat my shorts"
+    },
+    {
+        "id": 1,
+        "nome": "Lisa",
+        "idade": 8,
+        "catchphrase": "i dont know something boring, probably"
+    }
+]

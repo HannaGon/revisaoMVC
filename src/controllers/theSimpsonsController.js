@@ -57,7 +57,19 @@ const cadastrarPersonagem = async (request,response)=>{
     response.status(201).send(novoPersonagem)
 }
 
+const obterPersonagenPorId = async(request,response)=>{
+    const { id } = request.params
+    const personagens = await db("the-simpsons")
+
+    const personagemEncontrado = personagens.find(personagem => personagem.id == id)
+    if (!personagemEncontrado) return response.status(404).send({
+        message: `Nenhum personagem encontrado para esse id ${id}`
+    })
+response.status(200).send(personagemEncontrado)
+}
+
 module.exports = {
+    obterPersonagenPorId,
     obterPersonagens,
     cadastrarPersonagem
 }
